@@ -1,0 +1,1229 @@
+/* Director Section */
+.director-section {
+    padding: 40px 15px;
+    text-align: center;
+    color: var(--dark-color);
+}
+
+.director-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    margin: 20px auto 0;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.director-profile:hover {
+    transform: scale(1.01);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.director-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin: 20px auto;
+    overflow: hidden;
+    border: 3px solid rgba(0,0,0,0.1);
+    flex-shrink: 0;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 
+        0 2px 4px rgba(0,0,0,0.1),
+        0 4px 8px rgba(0,0,0,0.1);
+}
+
+.director-profile:hover .director-image {
+    transform: scale(1.03);
+    box-shadow: 
+        0 5px 10px rgba(0,0,0,0.15),
+        0 10px 20px rgba(0,0,0,0.1);
+    border-color: rgba(0,0,0,0.15);
+}
+
+.director-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.4s ease;
+}
+
+.director-info {
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.director-info h2 {
+    color: var(--primary-color);
+    margin-bottom: 8px;
+    font-size: 1.5rem;
+}
+
+.position {
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+.description {
+    line-height: 1.5;
+    margin-bottom: 15px;
+    color: var(--dark-color);
+    font-size: 0.95rem;
+}
+
+.director-info .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.director-info .social-links a {
+    color: var(--dark-color);
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+/* Manager Section */
+.manager-section {
+    padding: 40px 15px;
+    text-align: center;
+}
+
+.manager-cards-container {
+    width: 100%;
+    padding: 10px 0;
+}
+
+.manager-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.manager-card {
+    width: 100%;
+    max-width: 350px;
+    transition: transform 0.4s ease;
+}
+
+.manager-content {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    height: auto;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.4s ease;
+}
+
+.manager-image-container {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid rgba(0,0,0,0.08);
+    margin-bottom: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.manager-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.manager-basic-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+
+.manager-basic-info .position {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.manager-full-info {
+    opacity: 1;
+    height: auto;
+    margin-top: 15px;
+}
+
+.manager-full-info .description {
+    line-height: 1.5;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.manager-social-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.manager-social-links a {
+    color: #34495e;
+    font-size: 1.1rem;
+}
+
+/* Team Leaders Section */
+.team-leaders-section {
+    padding: 40px 15px;
+}
+
+.team-leaders-section h1 {
+    font-size: 1.8rem;
+}
+
+.team-leaders-section .subtitle {
+    font-size: 1rem;
+    max-width: 100%;
+    padding: 0 15px;
+}
+
+.team-leader-circles-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 10px 0;
+}
+
+.team-leader-circles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+}
+
+.team-leader-circles::before {
+    display: none;
+}
+
+.team-leader-circle {
+    width: 120px;
+    height: 120px;
+    margin: 0;
+}
+
+.team-leader-avatar {
+    width: 100%;
+    height: 100%;
+    border: 4px solid white;
+}
+
+.team-leader-details {
+    position: static;
+    width: 100%;
+    max-width: 280px;
+    margin: 15px auto 0;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    bottom: auto;
+    padding: 15px;
+}
+
+.team-leader-details h3 {
+    font-size: 1.1rem;
+}
+
+.team-leader-details .position {
+    font-size: 0.8rem;
+}
+
+.team-leader-details .description {
+    font-size: 0.85rem;
+}
+
+/* HR Team Section */
+.hr-team-section {
+    padding: 40px 15px;
+}
+
+.hr-team-section h1 {
+    font-size: 1.8rem;
+}
+
+.hr-team-section .subtitle {
+    font-size: 1rem;
+    max-width: 100%;
+    padding: 0 15px;
+}
+
+.hr-team-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.hr-member-card {
+    width: 100%;
+    max-width: 300px;
+    min-height: auto;
+    padding: 20px;
+}
+
+.hr-avatar-container {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 15px;
+}
+
+.hr-avatar {
+    width: 120px;
+    height: 120px;
+    border-width: 4px;
+}
+
+.hr-details h3 {
+    font-size: 1.2rem;
+}
+
+.hr-details .position {
+    font-size: 0.9rem;
+}
+
+.hr-details .description {
+    font-size: 0.9rem;
+}
+
+/* Compliance Section */
+.compliance-section, .it-section {
+    padding: 40px 15px;
+}
+
+.compliance-profile, .it-profile {
+    flex-direction: column;
+    max-width: 100%;
+    min-height: auto;
+}
+
+.compliance-image, .it-image {
+    width: 150px;
+    height: 150px;
+    margin: 20px auto;
+}
+
+.compliance-info, .it-info {
+    padding: 15px 20px;
+    text-align: center;
+    min-height: auto;
+}
+
+.compliance-info h2, .it-info h2 {
+    font-size: 1.5rem;
+}
+
+/* Footer */
+.modern-footer {
+    padding: 30px 15px;
+}
+
+.footer-content {
+    flex-direction: column;
+    gap: 30px;
+}
+
+.footer-links {
+    flex-direction: column;
+    gap: 20px;
+}
+
+.links-column {
+    text-align: center;
+}
+
+/* Desktop Styles */
+@media (min-width: 768px) {
+    .director-section, .manager-section, .team-leaders-section, .hr-team-section, .compliance-section, .it-section {
+        padding: 60px 0;
+    }
+    
+    .director-profile {
+        flex-direction: row;
+        max-width: 900px;
+        margin: 40px auto 0;
+    }
+    
+    .director-image {
+        width: 250px;
+        height: 250px;
+        margin: 30px;
+    }
+    
+    .director-info {
+        padding: 25px 40px;
+        text-align: left;
+        height: 220px;
+    }
+    
+    .director-info h2 {
+        font-size: 2rem;
+    }
+    
+    .manager-cards {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        max-width: 1400px;
+    }
+    
+    .manager-card {
+        width: 300px;
+    }
+    
+    .team-leader-circles {
+        flex-wrap: nowrap;
+        gap: 0;
+    }
+    
+    .team-leader-circle {
+        width: 160px;
+        height: 160px;
+        margin: 0 -15px;
+    }
+    
+    .team-leader-details {
+        position: absolute;
+        width: 200px;
+        opacity: 0;
+        visibility: hidden;
+        margin: 0;
+    }
+    
+    .team-leader-circle:hover .team-leader-details {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .hr-team-cards {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+    
+    .compliance-profile, .it-profile {
+        flex-direction: row;
+        max-width: 850px;
+    }
+    
+    .compliance-profile {
+        flex-direction: row-reverse;
+    }
+    
+    .compliance-info, .it-info {
+        text-align: left;
+        padding: 20px 35px;
+    }
+    
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .footer-links {
+        flex-direction: row;
+        gap: 40px;
+    }
+    
+    .links-column {
+        text-align: left;
+    }
+}
+
+@media (min-width: 992px) {
+    .manager-cards {
+        flex-wrap: nowrap;
+    }
+    
+    .manager-card:hover .manager-content {
+        width: 650px;
+        height: 320px;
+        flex-direction: row;
+    }
+    
+    .manager-card:hover .manager-image-container {
+        width: 180px;
+        height: 180px;
+        margin-right: 40px;
+        margin-bottom: 0;
+    }
+    
+    .manager-card:hover .manager-info {
+        text-align: left;
+    }
+    
+    .manager-full-info {
+        opacity: 0;
+        height: 0;
+        margin: 0;
+    }
+    
+    .manager-card:hover .manager-full-info {
+        opacity: 1;
+        height: auto;
+    }
+}
+/* Team Leaders Section - Circular Version */
+.team-leaders-section {
+    padding: 80px 0;
+    position: relative;
+    text-align: center;
+}
+
+.team-leaders-section .section-header {
+    margin-bottom: 60px;
+}
+
+.team-leaders-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.team-leaders-section h1 span {
+    color: #4a6bff;
+}
+
+.team-leaders-section .subtitle {
+    color: #666;
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.team-leader-circles-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.team-leader-circles {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0;
+}
+
+.team-leader-circle {
+    width: 160px;
+    height: 160px;
+    position: relative;
+    margin: 0 -15px;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.team-leader-circle:hover {
+    transform: translateY(-10px);
+    z-index: 2;
+}
+
+.team-leader-avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.team-leader-circle:hover .team-leader-avatar {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.team-leader-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-leader-details {
+    position: absolute;
+    bottom: calc(100% + 20px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.team-leader-circle:hover .team-leader-details {
+    opacity: 1;
+    visibility: visible;
+    bottom: calc(100% + 30px);
+}
+
+.team-leader-details h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.team-leader-details .position {
+    color: #4a6bff;
+    font-weight: 600;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+}
+
+.team-leader-details .description {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+.team-leader-details .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.team-leader-details .social-links a {
+    color: #4a6bff;
+    background: rgba(74, 107, 255, 0.1);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    text-decoration: none; /* This removes any underline */
+}
+
+.team-leader-details .social-links a:hover {
+    background: #4a6bff;
+    color: white;
+    text-decoration: none; /* Ensures no underline appears on hover */
+}
+
+/* Connector lines between circles */
+.team-leader-circles::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    right: 50px;
+    height: 2px;
+    background: #4a6bff;
+    z-index: 0;
+    opacity: 0.3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .team-leader-circles {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+    
+    .team-leader-circle {
+        margin: 0;
+    }
+    
+    .team-leader-circles::before {
+        display: none;
+    }
+    
+    .team-leader-details {
+        left: 140px;
+        top: 50%;
+        bottom: auto;
+        transform: translateY(-50%);
+    }
+    
+    .team-leader-circle:hover .team-leader-details {
+        bottom: auto;
+        left: 140px;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-leaders-section h1 {
+        font-size: 2rem;
+    }
+    
+    .team-leader-circle {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .team-leader-details {
+        width: 180px;
+        left: 120px;
+    }
+}
+
+/* Main container for all rows */
+.team-leader-circles-container {
+    display: flex;
+    flex-direction: column;
+    gap: 60px; /* Space between rows */
+}
+
+/* Each row of 4 leaders */
+.team-leader-circles {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    flex-wrap: nowrap; /* Ensure 4 per row */
+}
+
+/* Connector lines - now per row */
+.team-leader-circles::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: #4a6bff;
+    z-index: 0;
+    opacity: 0.3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .team-leader-circle {
+        width: 140px;
+        height: 140px;
+    }
+}
+
+@media (max-width: 992px) {
+    /* 2 leaders per row on tablets */
+    .team-leader-circles {
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+    .team-leader-circles::before {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    /* 1 leader per row on mobile */
+    .team-leader-circles {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* HR Team Section Styles */
+.hr-team-section {
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hr-team-section .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.hr-team-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.hr-team-section h1 span {
+    color: #4a6bff;
+}
+
+.hr-team-section .subtitle {
+    color: #666;
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.hr-team-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.hr-member-card {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.hr-member-card {
+    /* Existing styles */
+    width: 280px;
+    min-height: 350px; /* Fixed height (adjust as needed) */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distributes space evenly */
+}
+
+.hr-member-card p {
+    margin-bottom: 0; /* Prevents extra spacing */
+}
+.hr-member-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.hr-avatar-container {
+    margin: 0 auto 20px;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hr-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #e6e9ff;
+    position: relative;
+}
+
+.hr-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hr-details h3 {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.hr-details .position {
+    color: #4a6bff;
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.hr-details .description {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.hr-details .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.hr-details .social-links a {
+    color: #4a6bff;
+    background: rgba(74, 107, 255, 0.1);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    text-decoration: none; /* This removes any underline */
+}
+
+.hr-details .social-links a:hover {
+    background: #4a6bff;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .hr-team-cards {
+        gap: 20px;
+    }
+    
+    .hr-member-card {
+        width: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hr-team-section {
+        padding: 60px 0;
+    }
+    
+    .hr-team-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .hr-member-card {
+        width: 100%;
+        max-width: 350px;
+    }
+}
+
+
+/* Compliance Section */
+.compliance-section {
+    padding: 60px 0;
+    text-align: center;
+    color: var(--dark-color);
+}
+
+.compliance-profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 850px;
+    margin: 30px auto 0;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    flex-direction: row-reverse;
+    height: auto; /* Changed to auto for better responsiveness */
+    min-height: 280px; /* Reduced from previous implicit height */
+}
+
+.compliance-profile:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.compliance-image {
+    width: 200px; /* Reduced from 250px */
+    height: 200px; /* Reduced from 250px */
+    border-radius: 50%;
+    margin: 25px; /* Reduced from 30px */
+    overflow: hidden;
+    border: 3px solid rgba(0,0,0,0.1);
+    flex-shrink: 0;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 
+        0 2px 4px rgba(0,0,0,0.1),
+        0 4px 8px rgba(0,0,0,0.1);
+}
+
+.compliance-profile:hover .compliance-image {
+    transform: scale(1.05) rotateY(-15deg);
+    box-shadow: 
+        0 6px 12px rgba(0,0,0,0.2),
+        0 12px 24px rgba(0,0,0,0.15),
+        inset 0 0 15px rgba(255, 255, 255, 0.8);
+    border-color: rgba(0,0,0,0.15);
+}
+
+.compliance-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.4s ease;
+    transform-style: preserve-3d;
+}
+
+.compliance-profile:hover .compliance-image img {
+    transform: scale(1.05);
+}
+
+.compliance-info {
+    padding: 20px 35px; /* Reduced padding */
+    text-align: left;
+    flex-grow: 1;
+    height: auto; /* Changed to auto */
+    min-height: 200px; /* Added min-height instead of fixed height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.compliance-info h2 {
+    color: var(--primary-color);
+    margin-bottom: 8px; /* Reduced from 10px */
+    font-size: 1.8rem; /* Reduced from 2rem */
+    transition: all 0.3s ease;
+}
+
+.position {
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin-bottom: 12px; /* Reduced from 15px */
+    font-size: 1.1rem; /* Reduced from 1.2rem */
+    transition: all 0.3s ease;
+}
+
+.description {
+    line-height: 1.5; /* Reduced from 1.6 */
+    margin-bottom: 12px; /* Reduced from 15px */
+    color: var(--dark-color);
+    font-size: 0.95rem; /* Slightly reduced font size */
+    transition: all 0.3s ease;
+}
+
+.compliance-info .social-links {
+    display: flex;
+    gap: 12px; /* Reduced from 15px */
+    transition: all 0.3s ease;
+}
+
+.compliance-info .social-links a {
+    color: var(--dark-color);
+    font-size: 1.2rem; /* Reduced from 1.3rem */
+    transition: all 0.3s ease;
+}
+
+.compliance-info .social-links a:hover {
+    color: var(--primary-color);
+    transform: translateY(-2px) scale(1.1); /* Reduced translateY from -3px */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .compliance-section {
+        padding: 50px 0; /* Reduced padding */
+    }
+    
+    .compliance-profile {
+        flex-direction: column;
+        text-align: center;
+        max-width: 350px; /* Reduced from 400px */
+        min-height: auto;
+    }
+    
+    .compliance-image {
+        margin: 20px auto 0; /* Reduced margin */
+        width: 150px; /* Reduced from 180px */
+        height: 150px; /* Reduced from 180px */
+    }
+    
+    .compliance-info {
+        padding: 15px 20px; /* Reduced padding */
+    }
+    
+    .compliance-info h2 {
+        font-size: 1.6rem; /* Adjusted for mobile */
+    }
+    
+    .position {
+        font-size: 1rem; /* Adjusted for mobile */
+    }
+    
+    .description {
+        font-size: 0.9rem; /* Adjusted for mobile */
+    }
+    
+    .compliance-info .social-links {
+        gap: 10px; /* Reduced gap */
+    }
+    
+    .compliance-profile:hover .compliance-image {
+        transform: scale(1.05);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.2); /* Reduced shadow */
+    }
+}
+
+/* IT Section */
+.it-section {
+    padding: 60px 0;
+    text-align: center;
+    color: var(--dark-color);
+}
+
+.it-profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 850px;
+    margin: 30px auto 0;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    /* Removed flex-direction: row-reverse to default (image on left) */
+    height: auto;
+    min-height: 280px;
+}
+
+.it-profile:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.it-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 25px;
+    overflow: hidden;
+    border: 3px solid rgba(0,0,0,0.1);
+    flex-shrink: 0;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 
+        0 2px 4px rgba(0,0,0,0.1),
+        0 4px 8px rgba(0,0,0,0.1);
+}
+
+.it-profile:hover .it-image {
+    transform: scale(1.05) rotateY(15deg); /* Changed to positive rotation for left side */
+    box-shadow: 
+        0 6px 12px rgba(0,0,0,0.2),
+        0 12px 24px rgba(0,0,0,0.15),
+        inset 0 0 15px rgba(255, 255, 255, 0.8);
+    border-color: rgba(0,0,0,0.15);
+}
+
+.it-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.4s ease;
+    transform-style: preserve-3d;
+}
+
+.it-profile:hover .it-image img {
+    transform: scale(1.05);
+}
+
+.it-info {
+    padding: 20px 35px;
+    text-align: left;
+    flex-grow: 1;
+    height: auto;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.it-info h2 {
+    color: var(--primary-color);
+    margin-bottom: 8px;
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+}
+
+.position {
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.description {
+    line-height: 1.5;
+    margin-bottom: 12px;
+    color: var(--dark-color);
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.it-info .social-links {
+    display: flex;
+    gap: 12px;
+    transition: all 0.3s ease;
+}
+
+.it-info .social-links a {
+    color: var(--dark-color);
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.it-info .social-links a:hover {
+    color: var(--primary-color);
+    transform: translateY(-2px) scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .it-section {
+        padding: 50px 0;
+    }
+    
+    .it-profile {
+        flex-direction: column;
+        text-align: center;
+        max-width: 350px;
+        min-height: auto;
+    }
+    
+    .it-image {
+        margin: 20px auto 0;
+        width: 150px;
+        height: 150px;
+    }
+    
+    .it-info {
+        padding: 15px 20px;
+    }
+    
+    .it-info h2 {
+        font-size: 1.6rem;
+    }
+    
+    .position {
+        font-size: 1rem;
+    }
+    
+    .description {
+        font-size: 0.9rem;
+    }
+    
+    .it-info .social-links {
+        gap: 10px;
+    }
+    
+    .it-profile:hover .it-image {
+        transform: scale(1.05);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    }
+}
