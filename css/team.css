@@ -392,15 +392,14 @@
     }
 }
 
-/* Team Leaders Section - Circular Version */
+/* Team Leaders Section */
 .team-leaders-section {
-    padding: 80px 0;
-    position: relative;
-    text-align: center;
+    padding: 10px 0 0 !important; /* Zero bottom padding */
+    margin-bottom: 0 !important;
 }
 
 .team-leaders-section .section-header {
-    margin-bottom: 60px;
+    margin-bottom: 20px !important; /* Reduced header spacing */
 }
 
 .team-leaders-section h1 {
@@ -1133,15 +1132,22 @@
         box-shadow: 0 6px 12px rgba(0,0,0,0.2);
     }
 }
-/* Refined Compact Backend Support Section with Unique Class Prefix */
+/* Backend Support Section - Pull up tightly */
 .unknown-backend-support-section {
-    padding: 30px 0;
+    padding: 0 0 30px !important; /* Zero top padding */
+    margin-top: -40px !important; /* Pull up into previous section */
 }
 
+/* Fix any container spacing */
 .unknown-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 15px;
+    padding-top: 0 !important;
+}
+
+/* Remove all possible spacing offenders */
+.team-leaders-section ~ .unknown-backend-support-section,
+.team-leaders-section + * {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
 }
 
 .unknown-section-title {
