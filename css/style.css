@@ -914,11 +914,29 @@ span {
 .leadership {
     padding: 100px 0;
     position: relative;
+    padding: 40px 0;
+    text-align: center;
 }
 
 .section-header {
     text-align: center;
     margin-bottom: 60px;
+}
+
+.leadership h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  background: linear-gradient(135deg, #1ff4ff, #8823d0); /* Replaced vars with actual colors */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transform: perspective(500px) translateZ(20px);
+  display: inline-block;
 }
 
 .section-title {
