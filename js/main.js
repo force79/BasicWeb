@@ -211,3 +211,28 @@ document.addEventListener('DOMContentLoaded', function() {
         void img.offsetWidth;
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  const heroTitle = document.querySelector('.hero-title');
+  
+  // First check - run immediately if already visible
+  if (isElementInViewport(heroTitle)) {
+    heroTitle.classList.add('animate-in');
+  }
+  
+  // Then set up scroll listener
+  window.addEventListener('scroll', function() {
+    if (isElementInViewport(heroTitle)) {
+      heroTitle.classList.add('animate-in');
+    }
+  });
+
+  function isElementInViewport(el) {
+    if (!el) return false;
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top <= (window.innerHeight * 0.8) &&
+      rect.bottom >= 0
+    );
+  }
+});
