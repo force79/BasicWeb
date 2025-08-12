@@ -236,3 +236,102 @@ document.addEventListener('DOMContentLoaded', function() {
     );
   }
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Form submission handling
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show loading state
+            document.getElementById('formLoading').style.display = 'block';
+            contactForm.querySelector('.button-text').style.visibility = 'hidden';
+            
+            // Simulate form submission
+            setTimeout(function() {
+                document.getElementById('formLoading').style.display = 'none';
+                contactForm.style.display = 'none';
+                document.getElementById('formSuccess').style.display = 'block';
+                
+                // Reset form after 5 seconds
+                setTimeout(function() {
+                    contactForm.reset();
+                    contactForm.style.display = 'block';
+                    document.getElementById('formSuccess').style.display = 'none';
+                    contactForm.querySelector('.button-text').style.visibility = 'visible';
+                }, 5000);
+            }, 2000);
+        });
+    }
+
+    // Tab functionality
+    const tabButtons = document.querySelectorAll('.tab-button');
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const tabName = button.getAttribute('data-tab');
+            
+            // Remove active class from all buttons and content
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Add active class to clicked button and corresponding content
+            button.classList.add('active');
+            document.querySelector(`.tab-content[data-tab="${tabName}"]`).classList.add('active');
+        });
+    });
+
+    // Back to top button
+    const backToTopButton = document.querySelector('.back-to-top');
+    if (backToTopButton) {
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    // Intersection Observer for animations
+    const animateOnScroll = function() {
+        const elements = document.querySelectorAll('.slide-in-left, .slide-in-right, .fade-in');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateX(0)';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        elements.forEach(element => {
+            element.style.opacity = '0';
+            if (element.classList.contains('slide-in-left')) {
+                element.style.transform = 'translateX(-50px)';
+            } else if (element.classList.contains('slide-in-right')) {
+                element.style.transform = 'translateX(50px)';
+            }
+            observer.observe(element);
+        });
+    };
+    
+    // Initialize animations
+    animateOnScroll();
+});

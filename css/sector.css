@@ -8,6 +8,10 @@
     perspective: 1200px;
 }
 
+.sectors-main {
+    padding-top: 50px; /* Adjust this value as needed */
+}
+
 .sectors-hero {
     text-align: center;
     padding: 80px 20px 50px;
@@ -259,6 +263,7 @@
     
     .sectors-hero {
         padding: 70px 20px 40px;
+
     }
 }
 
