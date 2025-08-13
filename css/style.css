@@ -1444,7 +1444,7 @@ span {
 }
 
 /* Responsive */
-@media (max-width: 1200px) {
+@media (max-width: 200px) {
     .leader-slide {
         flex-direction: column;
     }
@@ -1454,11 +1454,11 @@ span {
     }
     
     .leader-details {
-        padding: 40px;
+        padding: 30px;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 718px) {
     .section-title {
         font-size: 2.2rem;
     }
@@ -1472,7 +1472,7 @@ span {
     }
     
     .leader-details {
-        padding: 30px;
+        padding: 80px;
     }
     
     .leader-quote {
@@ -1480,7 +1480,7 @@ span {
     }
     
     .leader-bio {
-        font-size: 1rem;
+        font-size: 2.9rem;
     }
     
     .carousel-controls {
