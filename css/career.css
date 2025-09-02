@@ -124,7 +124,7 @@ header {
 
 /* Section Styles */
 section {
-    padding: 60px 0;
+    padding: 30px 0;
 }
 
 .section-title {
@@ -138,6 +138,7 @@ section {
     position: relative;
     display: inline-block;
     padding-bottom: 10px;
+    white-space: nowrap; /* Prevents text from wrapping to next line */
 }
 
 .section-title h2::after {
@@ -188,10 +189,6 @@ section {
 }
 
 /* Approach Section */
-.approach {
-    background-color: #f5f7fa;
-}
-
 .approach-content {
     text-align: center;
     max-width: 800px;
