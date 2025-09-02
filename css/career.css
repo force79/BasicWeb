@@ -92,21 +92,19 @@ header {
     text-align: center;
 }
 
-/* Video as background */
 .hero-video {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 70%;
-    object-fit: cover; /* keeps video covering full area */
-    z-index: -1; /* behind content */
+    height: 100%;
+    object-fit: cover; 
+    z-index: -1; 
 }
 
-/* Overlay (dark transparent layer for readability) */
 .hero-overlay {
     position: relative;
-    background: rgba(44, 62, 80, 0.6); /* adjust opacity */
+    background: rgba(44, 62, 80, 0.6); 
     padding: 150px 50px;
     border-radius: 12px;
 }
