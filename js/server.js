@@ -11,8 +11,8 @@ app.use(cors());
 let transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "yourgmail@gmail.com",  // replace with your Gmail
-    pass: "your-app-password"     // use Gmail App Password (not normal password)
+    user: "forcejod@gmail.com",  // replace with your Gmail
+    pass: "vdnx nyje cicn xhdl"     // use Gmail App Password (not normal password)
   }
 });
 
