@@ -70,3 +70,34 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+document.getElementById("callbackForm").addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const data = {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    phone: document.getElementById("phone").value,
+    message: document.getElementById("message").value
+  };
+
+  try {
+    const response = await fetch("http://localhost:5000/send-email", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
+
+    const result = await response.json();
+    const msg = document.getElementById("responseMessage");
+
+    msg.style.display = "block";
+    msg.style.color = result.success ? "green" : "red";
+    msg.innerText = result.message;
+
+    if (result.success) document.getElementById("callbackForm").reset();
+  } catch (err) {
+    console.error(err);
+    alert("⚠️ Error connecting to server.");
+  }
+});
