@@ -38,7 +38,7 @@ app.post("/callback", async (req, res) => {
 
     // Professional HTML email template
     let mailOptions = {
-      from: `"Your Company Leads" <companyemail@gmail.com>`, // looks professional
+      from: `"Ethereal Assurance Leads" <companyemail@gmail.com>`, // looks professional
       replyTo: email, // replies go to client
       to: recipients, 
       subject: `📞 New Callback Request from ${name}`,
