@@ -1,46 +1,57 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const nodemailer = require("nodemailer");
 const cors = require("cors");
+const nodemailer = require("nodemailer");
 
 const app = express();
-app.use(bodyParser.json());
+const PORT = 5000;
+
+// Middleware
 app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-// configure transporter (using Gmail)
-let transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: "forcejod@gmail.com",  // replace with your Gmail
-    pass: "vdnx nyje cicn xhdl"     // use Gmail App Password (not normal password)
-  }
-});
-
-// POST route for callback form
-app.post("/send-email", async (req, res) => {
-  const { name, email, phone, message } = req.body;
-
-  const mailOptions = {
-    from: `"Callback Form" <yourgmail@gmail.com>`,
-    to: "deletesharma79@gmail.com",
-    subject: "New Callback Request",
-    html: `
-      <h3>New Callback Request</h3>
-      <p><strong>Name:</strong> ${name}</p>
-      <p><strong>Email:</strong> ${email}</p>
-      <p><strong>Phone:</strong> ${phone}</p>
-      <p><strong>Message:</strong> ${message}</p>
-    `
-  };
-
+// API Route
+app.post("/callback", async (req, res) => {
   try {
+    const { name, email, phone, message } = req.body;
+
+    if (!name || !email || !phone) {
+      return res.status(400).json({ success: false, message: "All required fields must be filled" });
+    }
+
+    // Configure Nodemailer
+    let transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: "forcejod@gmail.com",   // 👈 apna gmail
+        pass: "vdnx nyje cicn xhdl"      // 👈 Gmail App Password (normal password nahi chalega)
+      }
+    });
+
+    // Mail content
+    let mailOptions = {
+      from: email,
+      to: "your-email@gmail.com", // 👈 jaha pe lead chahiye
+      subject: "New Call Back Request",
+      text: `You got a new request:
+      
+      Name: ${name}
+      Email: ${email}
+      Phone: ${phone}
+      Message: ${message}`
+    };
+
+    // Send mail
     await transporter.sendMail(mailOptions);
-    res.json({ success: true, message: "Email sent successfully!" });
+
+    res.status(200).json({ success: true, message: "Your request has been submitted successfully!" });
   } catch (error) {
-    console.error(error);
-    res.json({ success: false, message: "Failed to send email." });
+    console.error("Error:", error);
+    res.status(500).json({ success: false, message: "Something went wrong. Please try again later." });
   }
 });
 
-// start server
-app.listen(5000, () => console.log("Server running on http://localhost:5000"));
+app.listen(PORT, () => {
+  console.log(`🚀 Server running on http://localhost:${PORT}`);
+});
