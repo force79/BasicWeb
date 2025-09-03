@@ -24,7 +24,7 @@ app.post("/callback", async (req, res) => {
     let transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "forcejod@gmail.com",   // 👈 apna gmail
+        user: "mahee@ethereal.com",   // 👈 apna gmail
         pass: "vdnx nyje cicn xhdl"      // 👈 Gmail App Password (normal password nahi chalega)
       }
     });
