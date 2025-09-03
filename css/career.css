@@ -109,10 +109,6 @@ header {
     border-radius: 12px;
 }
 
-.hero {
-    height: 70vh;   /* same as your video */
-}
-
 .hero-video {
     height: 100%;   /* fill hero section */
 }
