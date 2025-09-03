@@ -1,10 +1,18 @@
-import nodemailer from "nodemailer";
+const express = require("express");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const nodemailer = require("nodemailer");
 
-export default async function handler(req, res) {
-  if (req.method !== "POST") {
-    return res.status(405).json({ success: false, message: "Method not allowed" });
-  }
+const app = express();
+const PORT = 5000;
 
+// Middleware
+app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// API Route
+app.post("/callback", async (req, res) => {
   try {
     const { name, email, phone, message } = req.body;
 
@@ -12,20 +20,25 @@ export default async function handler(req, res) {
       return res.status(400).json({ success: false, message: "All required fields must be filled" });
     }
 
+    // Configure Nodemailer (use your company email here, not ethereal)
     let transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "forcejod@gmail.com",   // ✅ your Gmail
-        pass: "vdnx nyje cicn xhdl"   // ✅ Gmail App Password
+        user: "forcejod@gmail.com",   // ✅ your official company email
+        pass: "vdnx nyje cicn xhdl"        // ✅ Gmail App Password
       }
     });
 
-    const recipients = ["deletesharma79@gmail.com"];
+    // Recipients (can be multiple)
+    const recipients = [
+      "deletesharma79@gmail.com",
+    ];
 
+    // Professional HTML email template
     let mailOptions = {
-      from: `"Ethereal Assurance Leads" <companyemail@gmail.com>`,
-      replyTo: email,
-      to: recipients,
+      from: `"Ethereal Assurance Leads" <companyemail@gmail.com>`, // looks professional
+      replyTo: email, // replies go to client
+      to: recipients, 
       subject: `📞 New Callback Request from ${name}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width:600px; margin:0 auto; border:1px solid #ddd; border-radius:8px; overflow:hidden;">
@@ -60,11 +73,16 @@ export default async function handler(req, res) {
       `
     };
 
+    // Send mail
     await transporter.sendMail(mailOptions);
-    res.status(200).json({ success: true, message: "Your request has been submitted successfully!" });
 
+    res.status(200).json({ success: true, message: "Your request has been submitted successfully!" });
   } catch (error) {
     console.error("Error:", error);
     res.status(500).json({ success: false, message: "Something went wrong. Please try again later." });
   }
-}
+});
+
+app.listen(PORT, () => {
+  console.log(`🚀 Server running on http://localhost:${PORT}`);
+});
