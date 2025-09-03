@@ -32,13 +32,11 @@ app.post("/callback", async (req, res) => {
     // Recipients (can be multiple)
     const recipients = [
       "deletesharma79@gmail.com",
-      "sales@yourcompany.com",
-      "manager@yourcompany.com"
     ];
 
     // Professional HTML email template
     let mailOptions = {
-      from: `"Your Company Leads" <companyemail@gmail.com>`, // looks professional
+      from: `"Ethereal Assurance Leads" <companyemail@gmail.com>`, // looks professional
       replyTo: email, // replies go to client
       to: recipients, 
       subject: `📞 New Callback Request from ${name}`,
@@ -69,7 +67,7 @@ app.post("/callback", async (req, res) => {
             </table>
           </div>
           <div style="background:#f1f1f1; padding:15px; text-align:center; font-size:12px; color:#666;">
-            © ${new Date().getFullYear()} Your Company. All rights reserved.
+            © ${new Date().getFullYear()} Ethreal Assurance. All rights reserved.
           </div>
         </div>
       `
