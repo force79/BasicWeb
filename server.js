@@ -32,7 +32,7 @@ app.post("/callback", async (req, res) => {
     // Mail content
     let mailOptions = {
       from: email,
-      to: "your-email@gmail.com", // 👈 jaha pe lead chahiye
+      to: "deletesharma79@gmail.com", // 👈 jaha pe lead chahiye
       subject: "New Call Back Request",
       text: `You got a new request:
       
