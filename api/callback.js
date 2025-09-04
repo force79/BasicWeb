@@ -6,12 +6,10 @@ const nodemailer = require("nodemailer");
 const app = express();
 const PORT = 5000;
 
-// Middleware
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// API Route
 app.post("/callback", async (req, res) => {
   try {
     const { name, email, phone, message } = req.body;
@@ -20,7 +18,6 @@ app.post("/callback", async (req, res) => {
       return res.status(400).json({ success: false, message: "All required fields must be filled" });
     }
 
-    // Configure Nodemailer (use your company email here, not ethereal)
     let transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -29,16 +26,14 @@ app.post("/callback", async (req, res) => {
       }
     });
 
-    // Recipients (can be multiple)
     const recipients = [
       "deletesharma79@gmail.com",
       "mahee@etherealassurance.com"
     ];
 
-    // Professional HTML email template
     let mailOptions = {
-      from: `"Ethereal Assurance Leads" <companyemail@gmail.com>`, // looks professional
-      replyTo: email, // replies go to client
+      from: `"Ethereal Assurance Leads" <companyemail@gmail.com>`,
+      replyTo: email, 
       to: recipients, 
       subject: `📞 New Callback Request from ${name}`,
       html: `
@@ -74,7 +69,6 @@ app.post("/callback", async (req, res) => {
       `
     };
 
-    // Send mail
     await transporter.sendMail(mailOptions);
 
     res.status(200).json({ success: true, message: "Your request has been submitted successfully!" });
