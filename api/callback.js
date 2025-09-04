@@ -47,7 +47,8 @@ app.post("/callback", async (req, res) => {
       </div>
       
       <!-- Body -->
-      <div style="padding:30px; color:#333;">
+      <div style="padding:30p
+      x; color:#333;">
         <p style="font-size:16px; margin-bottom:20px;">Hello Team,</p>
         <p style="font-size:15px; margin-bottom:25px;">You’ve received a new <strong>callback request</strong> via your website:</p>
 
