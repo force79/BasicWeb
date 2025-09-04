@@ -56,7 +56,7 @@ app.post("/callback", async (req, res) => {
 
     const recipients = [
       "deletesharma79@gmail.com",
-      "mahee@etherealassurance.com"
+      // "mahee@etherealassurance.com"
     ];
 
     let mailOptions = {
@@ -70,7 +70,7 @@ app.post("/callback", async (req, res) => {
       
       <!-- Header -->
       <div style="background:#004aad; color:#fff; padding:25px; text-align:center;">
-        <img src="https://via.placeholder.com/150x50?text=LOGO" alt="Company Logo" style="max-height:50px; margin-bottom:10px;">
+        <img src="../images/LogoCmp.png" alt="Company Logo" style="max-height:50px; margin-bottom:10px;">
         <h2 style="margin:0; font-size:22px; letter-spacing:0.5px;">New Callback Request</h2>
       </div>
       
