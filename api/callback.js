@@ -55,8 +55,8 @@ app.post("/callback", async (req, res) => {
     });
 
     const recipients = [
-      "deletesharma79@gmail.com"
-      // "mahee@etherealassurance.com"
+      "deletesharma79@gmail.com",
+      "mahee@etherealassurance.com"
     ];
 
     let mailOptions = {
