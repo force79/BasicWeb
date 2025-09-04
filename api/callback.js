@@ -27,7 +27,7 @@ app.post("/callback", async (req, res) => {
     });
 
     const recipients = [
-      "deletesharma79@gmail.com"
+      "forcejod@gmail.com"
       // "mahee@etherealassurance.com"
     ];
 
