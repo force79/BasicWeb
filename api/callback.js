@@ -32,6 +32,7 @@ app.post("/callback", async (req, res) => {
     // Recipients (can be multiple)
     const recipients = [
       "deletesharma79@gmail.com",
+      "mahee@ethereal.com"
     ];
 
     // Professional HTML email template
